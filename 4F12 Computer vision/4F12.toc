@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Preamble}{2}{}%
+\contentsline {subsection}{\numberline {1.2}What is computer vision?}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Geometrical and statistical frameworks}{4}{}%
