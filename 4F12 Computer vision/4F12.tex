@@ -41,9 +41,22 @@ First questions include the definition of computer vision and motivation to stud
 \textit{Examples --} Reconstructing objects from a scene (3D shape), discovery of location of image, semantic segmentation of the image (each pixel assigned a label, i.e: person, car, building etc.)\vspace{5pt}\\
 All these examples correspond to three different tasks in computer vision (also known as \textbf{3 R's}):
 \begin{enumerate}
-	\item Representation/reconstruction (Geometrical framework): Recover 3D shape.
-	\item Registration (Statistical framework): Compute their position or pose.
-	\item Recognition (Machine learning and data): Identify objects.
+	\item \textbf{Representation/reconstruction} (Geometrical framework): Recover 3D shape.
+	\begin{itemize}
+		\item Image acquisition (camera): Get points and depth of each pixel or mesh.
+		\item Get features: Since analyzing all pixels is computationally intensive, and in order to simplify the image (i.e: edges, corners, blobs...)
+	\end{itemize}
+	\item \textbf{Registration} (Statistical framework): Compute position or pose.
+	\begin{itemize}
+		\item Register the position of the camera with respect to the coordinate system.
+		\item Applications: VR, VAR indoors (i.e: IKEA app that allows users to view projected objects as if they are in the environment).
+	\end{itemize}
+	\item \textbf{Recognition} (Machine learning and data): Identify objects.
+	\begin{itemize}
+		\item Deep learning for computer vision.
+		\item Applications: facial recognition, object recognition (autonomous driving, labeling objects in surrounding environment for visually impaired people, app that captions drawings on board).
+		\item These techniques are powerful but they may be learning features that are "too simple" (knowing the theory is important).
+	\end{itemize}
 \end{enumerate}
 Computer vision isn't exactly the same as image processing and pattern recognition. Image processing: converting the input to output (more desirable image). Pattern recognition: a certain class of computer vision, require examples. \vspace{5pt}\\
 \textbf{Why study computer vision?} Curiosity, lots of applications of vision in real life.\\

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.27)  7 OCT 2021 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.9.27)  7 OCT 2021 16:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**4F12.tex
-(./4F12.tex
+**lasersafety.tex
+(./lasersafety.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-02-18>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -436,8 +436,8 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count290
 \l__pdf_internal_box=\box65
 )
-(./4F12.aux)
-\openout1 = `4F12.aux'.
+(./lasersafety.aux)
+\openout1 = `lasersafety.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -512,34 +512,55 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-(./4F12.toc)
-\tf@toc=\write6
-\openout6 = `4F12.toc'.
+[1
 
- [1
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<figures/eye.png, id=13, 759.83875pt x 560.59438pt>
+File: figures/eye.png Graphic file (type png)
+<use figures/eye.png>
+Package pdftex.def Info: figures/eye.png  used on input line 61.
+(pdftex.def)             Requested size: 362.37569pt x 267.35434pt.
+<figures/skin.png, id=15, 760.8425pt x 573.14125pt>
+File: figures/skin.png Graphic file (type png)
+<use figures/skin.png>
+Package pdftex.def Info: figures/skin.png  used on input line 68.
+(pdftex.def)             Requested size: 362.37569pt x 272.97954pt.
 
-{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
- [4] (./4F12.aux) ) 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./figures/eye.png>] [3 <./figures/skin.png>]
+<figures/contact.png, id=26, 760.8425pt x 573.14125pt>
+File: figures/contact.png Graphic file (type png)
+<use figures/contact.png>
+Package pdftex.def Info: figures/contact.png  used on input line 110.
+(pdftex.def)             Requested size: 362.37569pt x 272.97954pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 <./figures/contact.png>] (./lasersafety.aux) ) 
 Here is how much of TeX's memory you used:
- 13865 strings out of 478994
- 277729 string characters out of 5858184
- 558290 words of memory out of 5000000
- 31112 multiletter control sequences out of 15000+600000
- 410186 words of font info for 50 fonts, out of 8000000 for 9000
+ 13877 strings out of 478994
+ 278084 string characters out of 5858184
+ 558280 words of memory out of 5000000
+ 31124 multiletter control sequences out of 15000+600000
+ 408928 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,7n,89p,481b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super
-/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm
-1095.pfb>
-Output written on 4F12.pdf (4 pages, 92092 bytes).
+ 86i,7n,89p,466b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/t
+exmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2021/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2021/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/f
+onts/type1/public/cm-super/sfrm1095.pfb>
+Output written on lasersafety.pdf (5 pages, 1763449 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
