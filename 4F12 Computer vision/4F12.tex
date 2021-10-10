@@ -118,16 +118,16 @@ How are images stored on a computer? The simplest way to store a monochrome (gra
 	\end{enumerate}
 \end{itemize}
 \subsection{Computer vision as a hierarchical process}
-Multiple theories of the human vision hierarchy in neuroscience literature. Usually starts off with a raw image that is sent to the \textbf{vision system}. A high-level question is asked (i.e: Is this animal dangerous?) and an action is triggered depending on the answer to that question. Similarly, machine learning takes raw images as perceived intensities then performs a primal sketch (data reduction: blobs, edges, zero-crossings, groups), a 2.5D sketch (local surface, orientation, distance from viewer, depth discontinuities), then a 3D model representation to address the high-level question. 
+Multiple theories of the human vision hierarchy in neuroscience literature. Usually starts off with a raw image that is sent to the \textbf{vision system}. A high-level question is asked (i.e: Is this animal dangerous?) and an action is triggered depending on the answer to that question. Similarly, computer vision takes raw images as perceived intensities then performs a primal sketch (data reduction: blobs, edges, zero-crossings, groups), a 2.5D sketch (local surface, orientation, distance from viewer, depth discontinuities), then a 3D model representation to address the high-level question. 
 \subsection{Structure of an image}
 Example of an image with a person. The featureless region has a smooth variation of intensities (approximately constant intensity pixel values in the region). Edges reveal intensity discontinuities in \textbf{one} direction (cliff-life structure), while corners reveal an intensity discontinuity in \textbf{two} directions (a bit hard to interpret from intensity pixel plot). \\
-\textbf{Edges and corners are practically invariant to lighting --} (intensity discontinuities are likely to remain prominent whatever the lighting conditions) Very desirable since lighting conditions can be a nuisance factor.
+\textbf-- {Edges and corners are practically invariant to lighting --} (intensity discontinuities are likely to remain prominent whatever the lighting conditions) Very desirable since lighting conditions can be a nuisance factor.
 \subsection{Edge detection}
 \subsubsection{How to perform 1D Edge detection?}
 \begin{enumerate}
 	\item \textbf{Smoothing} the original raw signal $I(x)$ to reduce or suppress noise. \\
 	\underline{\textit{Solution:}} Gaussian filter -- a low pass filter that suppresses high-frequency noise.\\
-	We first convolve the signal $I(x,y)$ with a Gaussian kernel $g_\sigma (x)$ of standard deviation $\gamma$ to produce a smooth signal:
+	We first convolve the signal $I(x,y)$ with a Gaussian kernel $g_\sigma (x)$ of standard deviation $\sigma$ to produce a smooth signal:
 	\begin{center}
 		\fbox{$g_\sigma (x)=\frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{x^2}{2\sigma ^2}}$}
 		\vspace{5pt}\\
@@ -179,8 +179,8 @@ Makes use of the second derivative $S''(x,y)$:
 \textbf{-- 2D Convolution}\\
 In reality, we don't use infinite integrals because the computational power is large. Instead, we use truncated sums:
 \[S(x,y)=\sum_{u=-n}^{n}\sum_{v=-n}^{n} G_\sigma(u,v) I(x-u,y-v)\]
-The largest mass of the Gaussian kernel is usually between $-3 \sigma$ $+3 \sigma$. As a rule of thumb, we discard samples less than $1/1000$ of the peak value.
-We use $2n+1$ size kernel ($-n$ to $+n$). The higher the value of $\sigma$, the higher the value of $2n+1$.
+The largest mass of the Gaussian kernel is usually between $-3 \sigma$ and $+3 \sigma$. As a rule of thumb, we discard samples less than $1/1000$ of the peak value.
+We use a $2n+1$ size kernel ($-n$ to $+n$). The higher the value of $\sigma$, the higher the value of $2n+1$.
 \vspace{5pt}\\
 \textbf{Computational trick --} Decomposing a 2D convolution to a set of two 1D convolutions:
 \begin{center}
