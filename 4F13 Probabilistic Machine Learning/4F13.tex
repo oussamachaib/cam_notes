@@ -1,0 +1,79 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{appendix}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{theo}{}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}
+
+\title{% 
+	4F13: Probabilistic Machine Learning \\
+	\vspace{10pt}
+	\small Summarized from C. Rasmussen \& D. Krueger lectures, Michaelmas 2021}
+\author{\small Oussama Chaib}
+\date{\small October 2021}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\pagebreak
+	\section{Modelling data}
+	\subsection{Purpose of models}
+	The purpose of models is:
+	\begin{itemize}
+		\item Making predictions
+		\item Generalizing: interpolation, extrapolation
+		\item Generating more data from a similar distribution as the training set
+		\item Compressing and summarizing data
+		\item Interpreting statistical relationships in data
+		\item Evaluating the relative probability of a hypothesis on data
+	\end{itemize}
+	\subsection{Origin of models}
+	The origin of models can be:
+	\begin{itemize}
+		\item \textbf{First principles:}  (i.e: Newtonian mechanics model, high level of accuracy)
+		\item \textbf{Observations and data:} (i.e: annual production of timber depending on climate and geographical factors)
+	\end{itemize}
+	\textbf{Definition --} Machine learning is a broad term that covers theory and practice of mathematical models which to a significant degree rely on data.
+	\subsection{Priors}
+	Every model relies on priors: 
+	\begin{itemize}
+		\item \textbf{Knowledge}
+		\item \textbf{Assumptions} (could be true or false)
+		\item \textbf{Simplifying assumptions} (not necessarily true, but good enough -- i.e:  the mistake associated with the assumption is fairly small even though it might not be necessarily true)
+	\end{itemize}
+	\subsection{Components of a model}
+	Time series have: 
+	\begin{itemize}
+		\item Unobserved/hidden/latent variables ($x(t)$, $x(t-1)$)
+		\item Observations (shaded $y(t)$, $y(t-1)$)
+		\item Parameters to link everything 
+		\begin{itemize}
+			\item Transitions (between latent variables)
+			\item Emissions (from a lantent variable to an observation)
+		\end{itemize}
+	\end{itemize}
+	\underline{\emph{Note:}} The number of latent variables increases with the number of observations, but the number of parameters doesn't!\\
+	\textbf{-- Learning/training models:} "What to do with all this data?"\\ Depending on the data, some models include: inference, estimation, sampling, and marginalization.
+	\subsection{Practical modelling}
+	\begin{enumerate}
+		\item Treat (training) the unobserved quantities (latent variables, observations, parameters)
+		\item Make predictions based on test cases, interpret the trained model (can we figure out what the model is trying to tell us about the data?)
+		\item Evaluate the accuracy of the data
+		\item Model selection and criticism (choose the right model or variant of the model, identify limitations)
+	\end{enumerate}
+	There is not "true" or "correct" model -- \emph{"All models are wrong, but some are useful"} - George E.T. Box
+	\subsection{Comments from QnA}
+	-- Why is the error vector $e$ minimal if it's orthogonal to all columns of $\phi$?\\
+	$\phi$ is a fixed function, it doesn't have any parameters in it. Still linear in parameters because the product of $w$ and $\phi$ matrices is linear (even at high polynomial orders).\\
+	-- What is Euclidian geometry?\\
+	Simple geometries, straight lines, basic shapes (including circle).\\
+	-- Bayesian methods, why are they not as popular?: \\
+	Maximum likelihood (used often, single value that best explains the data, quite popular/successful).
+\end{document}
