@@ -69,6 +69,22 @@
 		\item Model selection and criticism (choose the right model or variant of the model, identify limitations)
 	\end{enumerate}
 	There is not "true" or "correct" model -- \emph{"All models are wrong, but some are useful"} - George E.T. Box
+	\section{Linear in the parameters regression}
+	Let's start off with a dataset $D={x_i,y_i}^N_{i=1}$. From a dataset of N points, we would like to infer the coordinate $y_*$ at $x_*$. A simple model to do that would be polynomial \textbf{linear in the parameters} regression:
+	\[f_w(x)=w_0+w_1 x+w_2 x^2+...+w_M x^M\]
+	where $w_i$ are the corresponding weights of the polynomial, and the \textbf{parameters} of the model.
+	\textbf{-- Relevant questions:}\\
+	\emph{Model structure:} Should we choose a polynomial? What degree $M$ should we choose?
+	\emph{Parameters:} What values of $w_i$ do we choose?
+	\subsection{Least squares approach}
+	Let's find the "best" polynomial (degree $M$ and weights $w_i$) according to the least squares approach (minimizing the variance or sum of squared error $e_i^2$):
+	\[e_i(x)^2=(y_i(x_i)-f_w(x_i))^2\]
+	\[E(x)=\sum^N_{i=1} e_i^2\]
+	
+	
+	
+	
+	\section{Likelihood and noise}
 	\subsection{Comments from QnA}
 	-- Why is the error vector $e$ minimal if it's orthogonal to all columns of $\phi$?\\
 	$\phi$ is a fixed function, it doesn't have any parameters in it. Still linear in parameters because the product of $w$ and $\phi$ matrices is linear (even at high polynomial orders).\\
