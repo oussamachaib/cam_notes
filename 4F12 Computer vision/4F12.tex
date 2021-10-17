@@ -202,6 +202,22 @@ Example:
 	\centering
 	\includegraphics[width=.6\linewidth]{figures/diff.png}
 \end{figure}
+
+\subsection{Corner detection}
+\subsubsection{Motivation}
+\textbf{The problem with edges:} Despite being powerful, sometimes they are inefficient, especially when image motion is analyzed. With edges, we can only observe motion normal to the edge.
+\subsubsection{Cross-correlation}
+\subsubsection{Harris corner detector}
+\subsubsection{Scale invariance}
+\subsubsection{Blob detection}
+\subsubsection{Comments from QnA}
+Why always Gaussian blurs? Other blurring techniques add artefacts to the image that weren't present initially.\\
+Blobs: detected with Laplacian of Gaussian filter.\\
+Why are blobs interesting?\\
+Linking sum of squared differences and cross correlations: 
+Image pyramids (DoG in our case): absolutely essential to computer vision, to achieve scale invariance.\\
+Blurring: Blurring repeatedly removes the higher frequencies, we could then resize the image and not lose information. Also, if the sampling frequency is higher than twice the Nyquist frequency, then we reconstruct the original data/image without a loss of information.\\
+Is the peak we get when auto-correlating with a corner patch unaffected by the direction/angle of the corner? In the case of the Harris detector yes, with a normal auto-correlation no, which is what motivates the Harris detection method.\\
 \end{document}
 
 
