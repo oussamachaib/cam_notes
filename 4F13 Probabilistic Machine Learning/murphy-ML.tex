@@ -1,0 +1,163 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{appendix}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+
+\newtcbtheorem[number within=section]{theo}{}%
+{colback=green!5,colframe=green!35!black,fonttitle=\bfseries}{th}
+
+\usepackage{hyperref}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
+\definecolor{myblue}{RGB}{15,77,145}
+\definecolor{mountainmeadow}{rgb}{0.19, 0.73, 0.56}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=myblue,
+	citecolor=mountainmeadow,
+	urlcolor=navyblue,
+}
+
+\title{% 
+	Machine Learning: A Probabilistic Perspective \\
+	\vspace{10pt}
+	\small Summarized from K. Murphy's book, Michaelmas 2021}
+\author{\small Oussama Chaib}
+\date{\small October 2021}
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	\pagebreak
+	\section{Introduction}
+	\subsection{Machine learning: what and why?}
+	\begin{itemize}
+		\item Approach of the book: the best way to make machines that can learn from data is to use the tools of probabilistic theory.
+		\item Probability theory: applied to anything involving uncertainties.
+		\begin{itemize}
+			\item What is the best prediction?
+			\item What is the best model?
+			\item What measurement should I perform next?
+		\end{itemize}
+		\item This systematic approach of using probability theory is often referred to as the \textbf{Bayesian approach}.
+		\item To avoid upsetting some audiences, we use the more "neutral" term \textbf{probabilistic approach} (some of the methods we use like \textit{maximum likelihood} estimation are not Bayesian, but certainly fall under probabilistic methods).
+		\item \textbf{Machine learning:} A set of methods that can automatically detect patterns in data, and then use them to predict future data or to perform other kinds of decision making using that data.
+	\end{itemize}
+
+\subsection{Types of machine learning}
+\begin{enumerate}
+	\item \textbf{Supervised (predictive):} Learn a mapping from inputs x to outputs y given a training set $D={(x_i,y_i)}_{i=1}^N$ containing N samples.
+	\begin{enumerate}
+		\item \textbf{Classification:} When the output $y_i$ is nominal (categorical) variable of a finite set (i.e: gender).
+		\item \textbf{Regression:} When the output $y_i$ is real-valued.
+	\end{enumerate}
+	\item \textbf{Unsupervised (descriptive):} No specified pattern, no obvious error metric to use (i.e: neural networks).
+	\item \textbf{Reinforcement learning:} Learning how to behave when given occasional reward or punishment signals.
+\end{enumerate}
+
+\subsection{Supervised learning}
+\subsubsection{Classification}
+\begin{itemize}
+	\item Typical example: $y=f(x)$ with y is a \textbf{finite} number of points (x can be continuous, discrete, or a combination of both).
+	\item We use the hat symbol to denote an estimate (i.e: $\hat{y}$ is an estimate of y).
+	\item We would like to predict the result on novel input $x_*$, meaning ones that weren't seen before.
+	\item \textbf{Probability notation:} Probability of output y given the input x, the training dataset D, and the model M.
+
+	 \item If the model is known and we do not wish to compare models, we drop the M so that: $p(y | x, D, M) \equiv p(y | x, D)$.
+	 \item Our best guess (most probable class label, mode of the distribution, MAP: maximum a posteriori estimate) will maximize this probability.
+	\[
+	\hat{y}=argmax^C_{c=1} \, \, (p(y | x, D, M)
+	\]
+\end{itemize}
+
+\subsubsection{Regression}
+\begin{itemize}
+	\item Just like classification but the response variable y is \textbf{continuous}.
+	\item Will be explored further.
+\end{itemize}
+\subsection{Models for supervised learning}
+\begin{enumerate}
+	\item \textbf{Parametric models:} $p(y | \mathbf{x})$ Fixed number of parameters. Usually faster but require \emph{stronger assumptions} about the nature of the data distribution.
+	\item \textbf{Non-parametric models:} $p(\mathbf{x)}$ More flexible but computationally hungry for large datasets.
+\end{enumerate}
+\subsubsection{Linear regression}
+Can be written as follow:
+\[
+y(\mathbf{x}) = \mathbf{w^T}.\mathbf{x} + \epsilon
+\]
+where $\mathbf{w^T}$ is the vector containing \textbf{weights}, and $\epsilon$ the \textbf{residual error} (or noise) between our linear predictions and the input data.\\
+We often assume that the error vector follows a \textbf{Gaussian} or \textbf{normal} distribution:
+\[
+\epsilon \sim \mathcal{N}(\mu, \sigma^2)
+\]
+where $\mu$ is the \textbf{mean} and $\sigma^2$ the variance, and $\mathcal{N}$ represents the normal distribution. The parameters of the model can then be defined such that:
+\[
+\mathbf{\theta}=(\mathbf{w},\sigma^2)
+\]
+Linear regression can be used to model \textbf{non-linear} relationships by introducing a \textbf{basis function} $\mathbf{\Phi}(x)$:
+\[
+p(y | x,\theta) = \mathcal{N}(y| w^T\mathbf{\Phi}(x),\sigma^2) 
+\]
+\pagebreak
+\section{A brief review of probability theory}
+\begin{itemize}
+\item Probability of a union of two events:
+\[
+p(A \wedge B) = p(A) + p(B) - p(A \vee B)
+\]
+\item Joint probability:
+\[
+p(A,B) = p(A \vee B) = p(A | B)p(B)
+\]
+\item \textbf{Marginal distribution}:
+\[
+p(A,B) = \sum_{b} p(A | B=b)p(B=b)
+\]
+\item \textbf{Conditional probability}
+\[
+p(A|B) = \frac{p(A,B)}{p(B)}
+\]
+\item \textbf{Bayes rule}
+\[
+p(A|B) = \frac{p(B|A)p(A)}{p(B)}
+\]
+For practical cases:
+\[
+\underbrace{p(\theta|data)}_{posterior} = \frac{\overbrace{p(data|\theta)}^{\propto\,likelihood}\,\,\,\overbrace{p(\theta)}^{prior}}{p(data)}
+\]
+\item \textbf{Mean} (expected value) and \textbf{variance}
+\[
+\mu_X = E(X)=\sum_{\chi} x p(x) = \int_{\chi} x p(x)dx
+\]
+\[
+\sigma^2= var[X] = E[(X-\mu)^2]=\int (x-\mu)^2 p(x)dx
+\]
+\item \textbf{Gaussian (normal) distribution}
+\[
+\mathcal{N}(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\,\, e^{-\frac{1}{2\sigma^2} (x-\mu)^2}
+\]
+\item \textbf{Covariance:} Measures the degree of correlation between two random variables X and Y:
+\[
+cov[X,Y] = E((X-E(X)).(Y-E(Y))) = E(XY)-E(X)E(Y)
+\]
+Covariance can be between 0 and infinity. Correlation is normalized between -1 and 1.
+\item \textbf{Monte Carlo approximation}
+\[
+z = \int f(\chi)p(\chi)d\chi = \frac{1}{T} \sum_{s=1}^{S} f(x_s)	
+\]
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\end{document}
