@@ -241,7 +241,7 @@ We observe that the functions in each case look like a combination of SEiso cova
 		plot subplot
 	end
 \end{lstlisting}
-\section*{Question (e)}
+\section*{Question (d)}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{figures/coursework1e.jpg}
